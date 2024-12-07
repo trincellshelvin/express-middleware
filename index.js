@@ -6,6 +6,7 @@ import { logRequestInfo } from "./middleware/logRequestInfo.js";
 
 const app = express();
 app.use(express.json());
+
 app.use(limiter);
 app.use(logRequestDetails);
 app.use(authUser);
@@ -58,9 +59,7 @@ app.post('/user', (req, res) => {
     if (contacts[id]) { return res.status(400).json({ error: "User already exists" }); }
     contacts[id] = { id, name, email, role, profile };
     res.status(201).json(contacts[id]);
-}); app.listen(3000, () => {
-    console.log('Server is running on http://localhost:3000');
-});
+}); 
 
 app.get("/search", (req, res) => {
     const term = req.query.term;

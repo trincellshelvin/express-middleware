@@ -5,4 +5,5 @@ const logRequestInfo = (req, res, next) => {
     next();
 };
 
-module.exports = logRequestInfo;
+export default logRequestInfo;
+

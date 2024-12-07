@@ -13,9 +13,4 @@ const logRequestDetails = (req, res, next) => {
     next();
 };
 
-module.exports = {
-    authUser,
-    logRequestDetails
-};
-
-//written this way as export: {authUser} was screaming at me and would not let me proceed.
+export { authUser, logRequestDetails };
