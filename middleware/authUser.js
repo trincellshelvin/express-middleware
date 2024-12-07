@@ -1,4 +1,4 @@
-const authUser = (req, res, next) => {
+export const authUser = (req, res, next) => {
     console.log("You are now logged in..");
     req.user = {
         name: "Santa",
@@ -7,10 +7,8 @@ const authUser = (req, res, next) => {
     next();
 };
 
-const logRequestDetails = (req, res, next) => {
+export const logRequestDetails = (req, res, next) => {
     console.log(`Incoming request: ${req.method} ${req.url}`);
     console.log(`Request body: ${JSON.stringify(req.body)}`);
     next();
 };
-
-export { authUser, logRequestDetails };

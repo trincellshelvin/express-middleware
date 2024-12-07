@@ -1,8 +1,7 @@
 import express from "express";
-import authUser from "./middleware/authUser.js";
-import { logRequestDetails } from "./middleware/authUser.js";
+import { authUser, logRequestDetails } from "./middleware/authUser.js";
 import limiter from "./middleware/rateLimiter.js";
-import { logRequestInfo } from "./middleware/logRequestInfo.js";
+import logRequestInfo  from "./middleware/logRequestInfo.js";
 
 const app = express();
 app.use(express.json());
